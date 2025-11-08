@@ -135,7 +135,7 @@ class Car {
 		return polygon;
 	}
 
-	draw(ctx, color) {
+	draw(ctx, color, drawSensor = false) {
 		if (this.damage) {
 			ctx.fillStyle = "gray";
 		} else {
@@ -152,7 +152,7 @@ class Car {
 
 		ctx.fill();
 		ctx.restore();
-		if (this.sensor)
+		if (this.sensor && drawSensor)
 			this.sensor.draw(ctx);
 	}
 }
